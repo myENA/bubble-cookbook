@@ -1,0 +1,10 @@
+{
+  "id": "example",
+  "ssh_keys": "ssh-rsa xxxxx",
+  "groups": [
+    "bubble"
+  ],
+  "shell": "/bin/bash",
+  "action": "create",
+  "comment": "Example User"
+}

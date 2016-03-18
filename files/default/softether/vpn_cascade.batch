@@ -1,0 +1,4 @@
+Hub DEFAULT
+UserCreate vpn /GROUP:none /REALNAME:"vpn" /NOTE:none
+UserAnonymousSet vpn
+BridgeCreate DEFAULT /DEVICE:vpn /TAP:yes

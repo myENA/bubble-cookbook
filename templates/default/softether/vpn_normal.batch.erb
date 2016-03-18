@@ -1,0 +1,5 @@
+Hub DEFAULT
+UserCreate vpn /GROUP:none /REALNAME:"vpn" /NOTE:none
+UserPasswordSet vpn /PASSWORD:vpn
+BridgeCreate DEFAULT /DEVICE:vpn /TAP:yes
+IPsecEnable /L2TP:yes /L2TPRAW:no /ETHERIP:no /PSK:<%= @softethervpn_psk %> /DEFAULTHUB:DEFAULT

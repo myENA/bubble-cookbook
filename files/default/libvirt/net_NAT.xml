@@ -1,0 +1,114 @@
+<!--
+WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
+OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
+  virsh net-edit NAT
+or other application using the libvirt API.
+-->
+
+<network>
+  <name>NAT</name>
+  <uuid>4f17ffe2-d436-4d3f-9760-b66aef927305</uuid>
+  <forward mode='nat'>
+    <nat>
+      <port start='1024' end='65535'/>
+    </nat>
+  </forward>
+  <bridge name='virbr0' stp='on' delay='0'/>
+  <mac address='52:54:00:c3:7b:a9'/>
+  <domain name='cloud.lan'/>
+  <ip address='192.168.22.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.22.2' end='192.168.22.239'/>
+<host mac='52:54:00:1d:aa:10' name='xen0' ip='192.168.22.10'/>
+<host mac='52:54:00:1d:aa:11' name='xen1' ip='192.168.22.11'/>
+<host mac='52:54:00:1d:aa:12' name='xen2' ip='192.168.22.12'/>
+<host mac='52:54:00:1d:aa:13' name='xen3' ip='192.168.22.13'/>
+<host mac='52:54:00:1d:aa:14' name='xen4' ip='192.168.22.14'/>
+<host mac='52:54:00:1d:aa:15' name='xen5' ip='192.168.22.15'/>
+<host mac='52:54:00:1d:aa:16' name='xen6' ip='192.168.22.16'/>
+<host mac='52:54:00:1d:aa:17' name='xen7' ip='192.168.22.17'/>
+<host mac='52:54:00:1d:aa:18' name='xen8' ip='192.168.22.18'/>
+<host mac='52:54:00:1d:aa:19' name='xen9' ip='192.168.22.19'/>
+<host mac='52:54:00:1d:aa:20' name='kvm0' ip='192.168.22.20'/>
+<host mac='52:54:00:1d:aa:21' name='kvm1' ip='192.168.22.21'/>
+<host mac='52:54:00:1d:aa:22' name='kvm2' ip='192.168.22.22'/>
+<host mac='52:54:00:1d:aa:23' name='kvm3' ip='192.168.22.23'/>
+<host mac='52:54:00:1d:aa:24' name='kvm4' ip='192.168.22.24'/>
+<host mac='52:54:00:1d:aa:25' name='kvm5' ip='192.168.22.25'/>
+<host mac='52:54:00:1d:aa:26' name='kvm6' ip='192.168.22.26'/>
+<host mac='52:54:00:1d:aa:27' name='kvm7' ip='192.168.22.27'/>
+<host mac='52:54:00:1d:aa:28' name='kvm8' ip='192.168.22.28'/>
+<host mac='52:54:00:1d:aa:29' name='kvm9' ip='192.168.22.29'/>
+<host mac='52:54:00:1d:aa:30' name='ovm0' ip='192.168.22.30'/>
+<host mac='52:54:00:1d:aa:31' name='ovm1' ip='192.168.22.31'/>
+<host mac='52:54:00:1d:aa:32' name='ovm2' ip='192.168.22.32'/>
+<host mac='52:54:00:1d:aa:33' name='ovm3' ip='192.168.22.33'/>
+<host mac='52:54:00:1d:aa:34' name='ovm4' ip='192.168.22.34'/>
+<host mac='52:54:00:1d:aa:35' name='ovm5' ip='192.168.22.35'/>
+<host mac='52:54:00:1d:aa:36' name='ovm6' ip='192.168.22.36'/>
+<host mac='52:54:00:1d:aa:37' name='ovm7' ip='192.168.22.37'/>
+<host mac='52:54:00:1d:aa:38' name='ovm8' ip='192.168.22.38'/>
+<host mac='52:54:00:1d:aa:39' name='ovm9' ip='192.168.22.39'/>
+<host mac='52:54:00:1d:aa:40' name='net0' ip='192.168.22.40'/>
+<host mac='52:54:00:1d:aa:41' name='net1' ip='192.168.22.41'/>
+<host mac='52:54:00:1d:aa:42' name='net2' ip='192.168.22.42'/>
+<host mac='52:54:00:1d:aa:43' name='net3' ip='192.168.22.43'/>
+<host mac='52:54:00:1d:aa:44' name='net4' ip='192.168.22.44'/>
+<host mac='52:54:00:1d:aa:45' name='net5' ip='192.168.22.45'/>
+<host mac='52:54:00:1d:aa:46' name='net6' ip='192.168.22.46'/>
+<host mac='52:54:00:1d:aa:47' name='net7' ip='192.168.22.47'/>
+<host mac='52:54:00:1d:aa:48' name='net8' ip='192.168.22.48'/>
+<host mac='52:54:00:1d:aa:49' name='net9' ip='192.168.22.49'/>
+<host mac='52:54:00:1d:aa:50' name='prx0' ip='192.168.22.50'/>
+<host mac='52:54:00:1d:aa:51' name='prx1' ip='192.168.22.51'/>
+<host mac='52:54:00:1d:aa:52' name='prx2' ip='192.168.22.52'/>
+<host mac='52:54:00:1d:aa:53' name='prx3' ip='192.168.22.53'/>
+<host mac='52:54:00:1d:aa:54' name='prx4' ip='192.168.22.54'/>
+<host mac='52:54:00:1d:aa:55' name='prx5' ip='192.168.22.55'/>
+<host mac='52:54:00:1d:aa:56' name='prx6' ip='192.168.22.56'/>
+<host mac='52:54:00:1d:aa:57' name='prx7' ip='192.168.22.57'/>
+<host mac='52:54:00:1d:aa:58' name='prx8' ip='192.168.22.58'/>
+<host mac='52:54:00:1d:aa:59' name='prx9' ip='192.168.22.59'/>
+<host mac='52:54:00:1d:aa:60' name='cs0' ip='192.168.22.60'/>
+<host mac='52:54:00:1d:aa:61' name='cs1' ip='192.168.22.61'/>
+<host mac='52:54:00:1d:aa:62' name='cs2' ip='192.168.22.62'/>
+<host mac='52:54:00:1d:aa:63' name='cs3' ip='192.168.22.63'/>
+<host mac='52:54:00:1d:aa:64' name='cs4' ip='192.168.22.64'/>
+<host mac='52:54:00:1d:aa:65' name='cs5' ip='192.168.22.65'/>
+<host mac='52:54:00:1d:aa:66' name='cs6' ip='192.168.22.66'/>
+<host mac='52:54:00:1d:aa:67' name='cs7' ip='192.168.22.67'/>
+<host mac='52:54:00:1d:aa:68' name='cs8' ip='192.168.22.68'/>
+<host mac='52:54:00:1d:aa:69' name='cs9' ip='192.168.22.69'/>
+<host mac='52:54:00:1d:aa:70' name='db0' ip='192.168.22.70'/>
+<host mac='52:54:00:1d:aa:71' name='db1' ip='192.168.22.71'/>
+<host mac='52:54:00:1d:aa:72' name='db2' ip='192.168.22.72'/>
+<host mac='52:54:00:1d:aa:73' name='db3' ip='192.168.22.73'/>
+<host mac='52:54:00:1d:aa:74' name='db4' ip='192.168.22.74'/>
+<host mac='52:54:00:1d:aa:75' name='db5' ip='192.168.22.75'/>
+<host mac='52:54:00:1d:aa:76' name='db6' ip='192.168.22.76'/>
+<host mac='52:54:00:1d:aa:77' name='db7' ip='192.168.22.77'/>
+<host mac='52:54:00:1d:aa:78' name='db8' ip='192.168.22.78'/>
+<host mac='52:54:00:1d:aa:79' name='db9' ip='192.168.22.79'/>
+<host mac='52:54:00:1d:aa:80' name='nsxmgr0' ip='192.168.22.80'/>
+<host mac='52:54:00:1d:aa:81' name='nsxmgr1' ip='192.168.22.81'/>
+<host mac='52:54:00:1d:aa:82' name='nsxmgr2' ip='192.168.22.82'/>
+<host mac='52:54:00:1d:aa:83' name='nsxcon1' ip='192.168.22.83'/>
+<host mac='52:54:00:1d:aa:84' name='nsxcon2' ip='192.168.22.84'/>
+<host mac='52:54:00:1d:aa:85' name='nsxcon3' ip='192.168.22.85'/>
+<host mac='52:54:00:1d:aa:86' name='nsxsvc1' ip='192.168.22.86'/>
+<host mac='52:54:00:1d:aa:87' name='nsxsvc2' ip='192.168.22.87'/>
+<host mac='52:54:00:1d:aa:88' name='nsxsvc3' ip='192.168.22.88'/>
+<host mac='52:54:00:1d:aa:89' name='sdn1' ip='192.168.22.89'/>
+<host mac='52:54:00:1d:aa:90' name='gen0' ip='192.168.22.90'/>
+<host mac='52:54:00:1d:aa:91' name='gen1' ip='192.168.22.91'/>
+<host mac='52:54:00:1d:aa:92' name='gen2' ip='192.168.22.92'/>
+<host mac='52:54:00:1d:aa:93' name='gen3' ip='192.168.22.93'/>
+<host mac='52:54:00:1d:aa:94' name='gen4' ip='192.168.22.94'/>
+<host mac='52:54:00:1d:aa:95' name='gen5' ip='192.168.22.95'/>
+<host mac='52:54:00:1d:aa:96' name='gen6' ip='192.168.22.96'/>
+<host mac='52:54:00:1d:aa:97' name='gen7' ip='192.168.22.97'/>
+<host mac='52:54:00:1d:aa:98' name='gen8' ip='192.168.22.98'/>
+<host mac='52:54:00:1d:aa:99' name='gen9' ip='192.168.22.99'/>
+    </dhcp>
+  </ip>
+</network>

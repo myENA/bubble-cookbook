@@ -1,0 +1,29 @@
+#!/bin/bash
+# THIS FILE IS ADDED FOR COMPATIBILITY PURPOSES
+#
+# It is highly advisable to create own systemd services or udev rules
+# to run scripts during boot instead of using this file.
+#
+# In contrast to previous versions due to parallel execution during boot
+# this script will NOT be run after all other services.
+#
+# Please note that you must run 'chmod +x /etc/rc.d/rc.local' to ensure
+# that this script will be executed during boot.
+
+touch /var/lock/subsys/local
+
+# Wait until libvirt starts the network on virbr0 before bringing up the interfaces
+while ! ip a | grep -Eq ': virbr0:'; do
+    echo "Waiting for virbr0 - network interface might be down..."
+    sleep 1
+done
+
+# bring up virbr0.50 for public traffic in CLOUDSTACK
+ifup virbr0.50
+
+# bring up tap_vpn for accessing vm's in virbr0
+ifup tap_vpn
+
+# Set iptable rules for the public interface
+iptables -t nat -I POSTROUTING -s 192.168.23.0/24 ! -d 192.168.23.0/24 -j MASQUERADE
+iptables -A INPUT -s 192.168.22.1/32 -p tcp -m state --state NEW -m multiport --dports 111,892,2049,32803 -j REJECT --reject-with icmp-port-unreachable

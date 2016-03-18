@@ -1,0 +1,65 @@
+---
+driver:
+  name: vagrant
+  provider: cloudstack
+  customize:
+    host:                   <%= ENV["CLOUDSTACK_HOST"] %>
+    api_key:                <%= ENV['CLOUDSTACK_API_KEY'] %>
+    secret_key:             <%= ENV['CLOUDSTACK_SECRET_KEY'] %>
+    network_name:           <%= ENV["NETWORK_NAME"] %>
+    zone_name:              <%= ENV["ZONE_NAME"] %>
+    service_offering_name:  <%= ENV["SERVICE_OFFERING_NAME"] %>
+    pf_ip_address:          <%= ENV["PUBLIC_SOURCE_NAT_IP"] %>
+    expunge_on_destroy:     True
+    pf_open_firewall:       False
+    pf_trusted_networks:
+    - <%= ENV["TRUSTED_NETWORKS"]  %>
+    port_forwarding_rules:
+    - privateport: 443
+      publicport: 50001
+      generate_firewall: True
+    ssh_user:               <%= ENV["SSH_USER"] || 'vagrant' %>
+
+provisioner:
+  name: chef_zero
+  require_chef_omnibus:     <%= ENV['OMNIBUS_CHEF_CLIENT_VERSION'] || '12.3.0' %>
+  kitchen_root:             /home/<%= ENV['SSH_USER'] %>/kitchen
+  root_path:                /home/<%= ENV['SSH_USER'] %>/kitchen
+  data_bags_path:           test/fixtures/data_bags
+
+platforms:
+  - name: 'CentOS7'
+    driver:
+      box: <%= ENV['LINUX_TEMPLATE_NAME'] %>
+
+suites:
+  - name: default
+    run_list:
+      - recipe[bubble::default]
+  - name: mgt-kvm-acs
+    driver:
+      customize:
+        disk_offering_name:     <%= ENV["DISK_OFFERING_NAME"] %>
+    run_list:
+      - recipe[bubble::default]
+    attributes:
+      bubble:
+        data_disk: true
+  - name: mgt-kvm-cosmic
+    driver:
+      customize:
+        disk_offering_name:     <%= ENV["DISK_OFFERING_NAME"] %>
+    run_list:
+      - recipe[bubble::default]
+    attributes:
+      bubble:
+        data_disk: true
+  - name: mgt-kvm-basic-cosmic
+    driver:
+      customize:
+        disk_offering_name:     <%= ENV["DISK_OFFERING_NAME"] %>
+    run_list:
+      - recipe[bubble::default]
+    attributes:
+      bubble:
+        data_disk: true

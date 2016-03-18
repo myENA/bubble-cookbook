@@ -1,0 +1,15 @@
+StrictHostKeyChecking no
+UserKnownHostsFile=/dev/null
+ForwardAgent yes
+
+Host cs*
+  User root
+
+Host xen*
+  User root
+
+Host kvm*
+  User root
+
+Host nsx*
+  User admin

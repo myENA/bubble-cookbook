@@ -1,0 +1,5 @@
+DEVICE=tap_vpn
+BOOTPROTO=none
+ONBOOT=no
+TYPE=Tap
+BRIDGE=virbr0
