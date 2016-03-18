@@ -9,12 +9,12 @@ This "bubble" is the base for using all tools that are located in the bubble-too
 
 Requirements
 ------------
-The "bubble" has been developed on CentOS 7.x and has no plans to support other distributions yet. 
+The "bubble" has been developed on CentOS 7.x and has no plans to support other distributions yet.
 
 The following requirements need to be met:
 
 * Intel based processor that supports virtualization (Haswell or better recommended)
-* 100+GB Harddrive (for templates and sourcecode) 
+* 100+GB Harddrive (for templates and sourcecode)
 * Centos 7(.2) Minimal installation (adjust disk layout to provide /data dir)
 
 Attributes
@@ -50,4 +50,5 @@ Contributing
 
 License and Authors
 -------------------
+License: Apache Version 2.0
 Authors: Fred Neubauer, Remi Bergsma, Bob van den Heuvel, Boris Schrijver, Miguel Ferreira, Wilder Rodrigues
