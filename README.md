@@ -1,8 +1,8 @@
 Bubble cookbook
 ==============================
-This cookbook installs all components to run a development environment based on KVM nested hypervising.
+This cookbook installs all components to run a Cosmic/ACS Cloudstack development environment based on KVM nested virtualization.
 
-This "bubble" is the base for using all tools that are located in the bubble-toolkit to do development on Cosmic and Apache Cloudstack. It gives the developer the opportunity to write, run and test his code agains "real" hardware.
+This "bubble" is the base for using all tools that are located in the bubble-toolkit to do development on Cosmic and Apache Cloudstack. It gives the developer the opportunity to write, run and test his code against "real" hardware.
 
 ![bubble running](https://cloud.githubusercontent.com/assets/1392945/13878645/09e3e1ee-ed13-11e5-9119-c7dc595e5cbb.png)
 ![bubble nuc](https://cloud.githubusercontent.com/assets/1392945/13878657/1e19cb2e-ed13-11e5-8dff-0f4f3855196a.png)
