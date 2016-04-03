@@ -18,4 +18,8 @@ describe 'bubble::default' do
     its(:stdout) { should match(/NAT\s+active/)}
   end
 
+  describe command('brctl show') do
+    its(:stdout) { should contain('tap_vpn')}
+    its(:stdout) { should contain('virbr0-nic')}
+  end
 end
