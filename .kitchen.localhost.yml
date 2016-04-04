@@ -1,0 +1,19 @@
+---
+driver:
+  name: localhost
+
+provisioner:
+  name: chef_zero
+  require_chef_omnibus:     <%= ENV['OMNIBUS_CHEF_CLIENT_VERSION'] || '12.3.0' %>
+  data_bags_path:           test/fixtures/data_bags
+
+platforms:
+  - name: local
+
+suites:
+  - name: default
+    run_list:
+      - recipe[bubble::default]
+    attributes:
+      bubble:
+        data_disk: false
