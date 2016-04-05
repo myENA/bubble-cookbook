@@ -1,9 +1,5 @@
 # Create base structure for NFS server
-%w( /data
-    /data/storage
-    /data/storage/primary
-    /data/storage/secondary
-    /data/storage/secondary/MCCT-SHARED-1
+%w( /data/storage/secondary/MCCT-SHARED-1
     /data/storage/secondary/MCCT-SHARED-2
     /data/storage/secondary/MCCT-SHARED-3
     /data/storage/primary/MCCT-XEN-1
@@ -17,6 +13,7 @@
     group node['bubble']['group_name']
     mode '0755'
     action :create
+    recursive true
   end
 end
 
