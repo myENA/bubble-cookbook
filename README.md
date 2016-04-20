@@ -36,7 +36,11 @@ Attributes
 
 Usage
 -----
-TODO
+This cookbook is provided with a set of default attributes which will result in a working system.
+
+For easy passwordless access to the nested VMs it is recommended to configure your SSH public-key in the "bubble", or let the cookbook provision an account by altering [`test/fixtures/data_bags/users/example.json`](test/fixtures/data_bags/users/example.json) with your credentials.
+
+To just provision a single machine without the presence of Chef server, see following [README](test/localinstall/README.md)
 
 Contributing
 ------------
